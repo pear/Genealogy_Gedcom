@@ -31,8 +31,7 @@
 // $Id$
 //
 
-//require_once 'Gedcom/Parser.php';
-require_once 'Genealogy_Parser.php';
+require_once 'Gedcom/Parser.php';
 
 /**
  * Genealogy_Gedcom
