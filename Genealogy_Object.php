@@ -1,4 +1,16 @@
 <?php
+/**
+ * Genealogy_Object
+ *
+ * PHP Versions 4 and 5
+ *
+ * @category Genealogy
+ * @package  Genealogy_Gedcom
+ * @author   Olivier Vanhoucke <olivier@php.net>
+ * @license  http://www.php.net/license/3_01.txt PHP License 3.0.1
+ * @version  CVS: $Id$
+ * @link     http://pear.php.net/package/Genealogy_Gedcom
+ */
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 // +----------------------------------------------------------------------+
 // | PHP Version 4                                                        |
@@ -22,18 +34,16 @@
 /**
  * Genealogy_Object
  *
- * Purpose:
- *
- *
- *
- * Contributors:
- *
- * @author   Olivier Vanhoucke <olivier@php.net>
- * @version  $Revision$
+ * @category Genealogy
  * @package  Genealogy_Gedcom
+ * @author   Olivier Vanhoucke <olivier@php.net>
+ * @license  http://www.php.net/license/3_01.txt PHP License 3.0.1
+ * @version  Release: @PACKAGE_VERSION@
  * @access   public
+ * @link     http://pear.php.net/package/Genealogy_Gedcom
  */
-class Genealogy_Object {
+class Genealogy_Object
+{
 
     /**
      * Contains the Gedcom object identifier
@@ -41,7 +51,7 @@ class Genealogy_Object {
      * @var    string
      * @access public
      */
-    var $Identifier   = '';
+    var $Identifier = '';
 
     /**
      * Contains the Gedcom object : FILE
@@ -56,11 +66,14 @@ class Genealogy_Object {
      *
      * Creates a new Genealogy_Object Object
      *
+     * @param array $arg Array of arguments
+     *
      * @access public
-     * @param  array
+     *
      * @return object Genealogy_Object
      */
-    function Genealogy_Object($arg) {
+    function Genealogy_Object($arg)
+    {
         $this->Identifier = $arg[0];
         $this->File       = $arg[1];
     }

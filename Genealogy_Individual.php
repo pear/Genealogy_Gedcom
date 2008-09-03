@@ -1,4 +1,16 @@
 <?php
+/**
+ * Genealogy_Individual
+ *
+ * PHP Versions 4 and 5
+ *
+ * @category Genealogy
+ * @package  Genealogy_Gedcom
+ * @author   Olivier Vanhoucke <olivier@php.net>
+ * @license  http://www.php.net/license/3_01.txt PHP License 3.0.1
+ * @version  CVS: $Id$
+ * @link     http://pear.php.net/package/Genealogy_Gedcom
+ */
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 // +----------------------------------------------------------------------+
 // | PHP Version 4                                                        |
@@ -19,25 +31,19 @@
 // $Id$
 //
 
-/* TODO
-  bapteme
-*/
-
 /**
  * Genealogy_Individual
  *
- * Purpose:
- *
- *
- *
- * Contributors:
- *
+ * @category Genealogy
+ * @package  Genealogy_Gedcom
  * @author   Olivier Vanhoucke <olivier@php.net>
- * @version  $Revision$
- * @package  Genealogy_Gedcom 
+ * @license  http://www.php.net/license/3_01.txt PHP License 3.0.1
+ * @version  Release: @PACKAGE_VERSION@
  * @access   public
+ * @link     http://pear.php.net/package/Genealogy_Gedcom
  */
-class Genealogy_Individual {
+class Genealogy_Individual
+{
 
     /**
      * Identifier
@@ -45,7 +51,7 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $Identifier   = '';
+    var $Identifier = '';
 
     /**
      * Lastname
@@ -53,7 +59,7 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $Lastname     = '';
+    var $Lastname = '';
 
     /**
      * Firstname
@@ -61,7 +67,7 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $Firstname    = '';
+    var $Firstname = '';
 
     /**
      * Nickname
@@ -69,7 +75,7 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $Nickname     = '';
+    var $Nickname = '';
 
     /**
      * Title
@@ -77,7 +83,7 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $Title        = '';
+    var $Title = '';
 
     /**
      * Birth
@@ -85,11 +91,11 @@ class Genealogy_Individual {
      * @var    array
      * @access public
      */
-    var $Birth  = array('Date'   => '',
-                        'Place'  => '',
-                        'Source' => '',
-                        'Note'   => ''
-                        );
+    var $Birth = array('Date'   => '',
+                       'Place'  => '',
+                       'Source' => '',
+                       'Note'   => ''
+                       );
 
     /**
      * Death
@@ -97,11 +103,11 @@ class Genealogy_Individual {
      * @var    array
      * @access public
      */
-    var $Death  = array('Date'   => '',
-                        'Place'  => '',
-                        'Source' => '',
-                        'Note'   => ''
-                        );
+    var $Death = array('Date'   => '',
+                       'Place'  => '',
+                       'Source' => '',
+                       'Note'   => ''
+                       );
 
     /**
      * First communion
@@ -109,11 +115,11 @@ class Genealogy_Individual {
      * @var    array
      * @access public
      */
-    var $FirstCommunion  = array('Date'   => '',
-                                 'Place'  => '',
-                                 'Source' => '',
-                                 'Note'   => ''
-                                 );
+    var $FirstCommunion = array('Date'   => '',
+                                'Place'  => '',
+                                'Source' => '',
+                                'Note'   => ''
+                                );
 
     /**
      * Sex
@@ -121,7 +127,7 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $Sex          = '';
+    var $Sex = '';
 
     /**
      * Occupation
@@ -129,7 +135,7 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $Occupation   = '';
+    var $Occupation = '';
 
     /**
      * Source
@@ -137,7 +143,7 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $Source       = '';
+    var $Source = '';
 
     /**
      * Object
@@ -145,7 +151,7 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $Object       = '';
+    var $Object = '';
 
     /**
      * Family spouse
@@ -161,7 +167,7 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $FamilyChild  = '';
+    var $FamilyChild = '';
 
     /**
      * Nationality
@@ -169,7 +175,7 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $Nationality  = '';
+    var $Nationality = '';
 
     /**
      * Burial
@@ -177,9 +183,9 @@ class Genealogy_Individual {
      * @var    array
      * @access public
      */
-    var $Burial       = array('Date'   => '',
-                              'Place'  => ''
-                              );
+    var $Burial = array('Date'   => '',
+                        'Place'  => ''
+                        );
 
     /**
      * Note
@@ -187,18 +193,20 @@ class Genealogy_Individual {
      * @var    string
      * @access public
      */
-    var $Note         = '';
+    var $Note = '';
 
     /**
      * Constructor
      *
      * Creates a new Genealogy_Individual Object
      *
+     * @param array $arg Array of details.
+     *
      * @access public
-     * @param  array
      * @return object Genealogy_Individual
      */
-    function Genealogy_Individual($arg) {
+    function Genealogy_Individual($arg)
+    {
         $this->Identifier               = $arg[0];
         $this->Lastname                 = $arg[1];
         $this->Firstname                = $arg[2];

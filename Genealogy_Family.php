@@ -1,4 +1,16 @@
 <?php
+/**
+ * Genealogy_Family
+ *
+ * PHP Versions 4 and 5
+ *
+ * @category Genealogy
+ * @package  Genealogy_Gedcom
+ * @author   Olivier Vanhoucke <olivier@php.net>
+ * @license  http://www.php.net/license/3_01.txt PHP License 3.0.1
+ * @version  CVS: $Id$
+ * @link     http://pear.php.net/package/Genealogy_Gedcom
+ */
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 // +----------------------------------------------------------------------+
 // | PHP Version 4                                                        |
@@ -25,18 +37,16 @@
 /**
  * Genealogy_Family
  *
- * Purpose:
- *
- *
- *
- * Contributors:
- *
- * @author   Olivier Vanhoucke <olivier@php.net>
- * @version  $Revision$
+ * @category Genealogy
  * @package  Genealogy_Gedcom
+ * @author   Olivier Vanhoucke <olivier@php.net>
+ * @license  http://www.php.net/license/3_01.txt PHP License 3.0.1
+ * @version  Release: @PACKAGE_VERSION@
  * @access   public
+ * @link     http://pear.php.net/package/Genealogy_Gedcom
  */
-class Genealogy_Family {
+class Genealogy_Family
+{
 
     /**
      * Contains the Gedcom family identifier
@@ -44,7 +54,7 @@ class Genealogy_Family {
      * @var    string
      * @access public
      */
-    var $Identifier   = '';
+    var $Identifier = '';
 
     /**
      * Husband
@@ -52,7 +62,7 @@ class Genealogy_Family {
      * @var    string
      * @access public
      */
-    var $Husband   = '';
+    var $Husband = '';
 
     /**
      * Wife
@@ -60,7 +70,7 @@ class Genealogy_Family {
      * @var    string
      * @access public
      */
-    var $Wife   = '';
+    var $Wife = '';
 
     /**
      * Number of child
@@ -68,7 +78,7 @@ class Genealogy_Family {
      * @var    string
      * @access public
      */
-    var $ChildNumber   = '';
+    var $ChildNumber = '';
 
     /**
      * Child
@@ -76,7 +86,7 @@ class Genealogy_Family {
      * @var    array
      * @access public
      */
-    var $Child  = array();
+    var $Child = array();
 
     /**
      * Marriage
@@ -84,13 +94,13 @@ class Genealogy_Family {
      * @var    array
      * @access public
      */
-    var $Marriage  = array('Date'    => '',
-                           'Time'    => '',
-                           'Place'   => '',
-                           'Witness' => array(),
-                           'Note'    => '',
-                           'Source'  => ''
-                           );
+    var $Marriage = array('Date'    => '',
+                          'Time'    => '',
+                          'Place'   => '',
+                          'Witness' => array(),
+                          'Note'    => '',
+                          'Source'  => ''
+                          );
 
     /**
      * Divorce
@@ -98,7 +108,7 @@ class Genealogy_Family {
      * @var    array
      * @access public
      */
-    var $Divorce  = array('Date' => '');
+    var $Divorce = array('Date' => '');
 
     /**
      * Associates
@@ -113,11 +123,14 @@ class Genealogy_Family {
      *
      * Creates a new Genealogy_Family Object
      *
+     * @param array $arg Array of arguments
+     *
      * @access public
-     * @param  array
+     *
      * @return object Genealogy_Family
      */
-    function Genealogy_Family($arg) {
+    function Genealogy_Family($arg)
+    {
         $this->Identifier          = $arg[0];
         $this->Husband             = $arg[1];
         $this->Wife                = $arg[2];

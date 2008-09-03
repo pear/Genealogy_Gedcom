@@ -1,7 +1,8 @@
 <?php
 error_reporting(E_ALL);
 
-//ini_set('include_path', '.;'.$_SERVER['DOCUMENT_ROOT'].'/pear'); // for windows users
+// for windows users
+//ini_set('include_path', '.;'.$_SERVER['DOCUMENT_ROOT'].'/pear');
 
 require_once 'Benchmark/Timer.php';
 require_once '../Genealogy_Gedcom.php';

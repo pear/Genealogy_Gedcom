@@ -1,4 +1,16 @@
 <?php
+/**
+ * Genealogy_Header
+ *
+ * PHP Versions 4 and 5
+ *
+ * @category Genealogy
+ * @package  Genealogy_Gedcom
+ * @author   Olivier Vanhoucke <olivier@php.net>
+ * @license  http://www.php.net/license/3_01.txt PHP License 3.0.1
+ * @version  CVS: $Id$
+ * @link     http://pear.php.net/package/Genealogy_Gedcom
+ */
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 // +----------------------------------------------------------------------+
 // | PHP Version 4                                                        |
@@ -22,18 +34,16 @@
 /**
  * Genealogy_Header
  *
- * Purpose:
- *
- *
- *
- * Contributors:
- *
- * @author   Olivier Vanhoucke <olivier@php.net>
- * @version  $Revision$
+ * @category Genealogy
  * @package  Genealogy_Gedcom
+ * @author   Olivier Vanhoucke <olivier@php.net>
+ * @license  http://www.php.net/license/3_01.txt PHP License 3.0.1
+ * @version  Release: @PACKAGE_VERSION@
  * @access   public
+ * @link     http://pear.php.net/package/Genealogy_Gedcom
  */
-class Genealogy_Header {
+class Genealogy_Header
+{
 
     /**
      * Contains Gedcom information
@@ -41,9 +51,9 @@ class Genealogy_Header {
      * @var    array
      * @access public
      */
-    var $Gedcom   = array('Version' => '',
-                          'Format'  => ''
-                          );
+    var $Gedcom = array('Version' => '',
+                        'Format'  => ''
+                        );
 
     /**
      * Contains File
@@ -51,7 +61,7 @@ class Genealogy_Header {
      * @var    string
      * @access public
      */
-    var $File   = '';
+    var $File = '';
 
     /**
      * Contains Copyright
@@ -59,7 +69,7 @@ class Genealogy_Header {
      * @var    string
      * @access public
      */
-    var $Copyright   = '';
+    var $Copyright = '';
 
     /**
      * Contains date
@@ -67,7 +77,7 @@ class Genealogy_Header {
      * @var    string
      * @access public
      */
-    var $Date   = '';
+    var $Date = '';
 
     /**
      * Contains Character
@@ -75,7 +85,7 @@ class Genealogy_Header {
      * @var    string
      * @access public
      */
-    var $Character   = '';
+    var $Character = '';
 
     /**
      * Contains Object
@@ -83,7 +93,7 @@ class Genealogy_Header {
      * @var    string
      * @access public
      */
-    var $Object   = '';
+    var $Object = '';
 
     /**
      * Contains Language
@@ -91,7 +101,7 @@ class Genealogy_Header {
      * @var    string
      * @access public
      */
-    var $Language   = '';
+    var $Language = '';
 
     /**
      * Contains Submitter
@@ -99,11 +109,11 @@ class Genealogy_Header {
      * @var    array
      * @access public
      */
-    var $Submitter   = array('Name'    => '',
-                             'Note'    => '',
-                             'Address' => '',
-                             'Phone'   => ''
-                             );
+    var $Submitter = array('Name'    => '',
+                           'Note'    => '',
+                           'Address' => '',
+                           'Phone'   => ''
+                           );
 
     /**
      * Contains the source information
@@ -125,18 +135,25 @@ class Genealogy_Header {
      *
      * Creates a new Genealogy_Header Object
      *
+     * @param array $arg Array of arguments
+     *
      * @access public
-     * @param  array
+     *
      * @return object Genealogy_Header
      */
-    function Genealogy_Header($arg) {
+    function Genealogy_Header($arg)
+    {
         $this->Gedcom['Version']    = $arg[0];
         $this->Gedcom['Format']     = $arg[1];
         $this->Date                 = $arg[2].' '.$arg[3];
         $this->Source['Name']       = $arg[4];
         $this->Source['Version']    = $arg[5];
         $this->Source['Corporate']  = $arg[6];
-        $this->Source['Address']    = $arg[7].' '.$arg[8].' '.$arg[9].' '.$arg[10].' '.$arg[11];
+        $this->Source['Address']    = $arg[7].' '.
+                                      $arg[8].' '.
+                                      $arg[9].' '.
+                                      $arg[10].' '.
+                                      $arg[11];
         $this->Source['Country']    = $arg[12];
         $this->Source['Phone']      = $arg[13];
         $this->Source['Data']       = $arg[14];

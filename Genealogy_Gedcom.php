@@ -1,4 +1,16 @@
 <?php
+/**
+ * Genealogy_Gedcom
+ *
+ * PHP Versions 4 and 5
+ *
+ * @category Genealogy
+ * @package  Genealogy_Gedcom
+ * @author   Olivier Vanhoucke <olivier@php.net>
+ * @license  http://www.php.net/license/3_01.txt PHP License 3.0.1
+ * @version  CVS: $Id$
+ * @link     http://pear.php.net/package/Genealogy_Gedcom
+ */
 /* vim: set expandtab tabstop=4 shiftwidth=4: */
 // +----------------------------------------------------------------------+
 // | PHP Version 4                                                        |
@@ -19,7 +31,8 @@
 // $Id$
 //
 
-require_once 'Gedcom/Parser.php';
+//require_once 'Gedcom/Parser.php';
+require_once 'Genealogy_Parser.php';
 
 /**
  * Genealogy_Gedcom
@@ -28,7 +41,7 @@ require_once 'Gedcom/Parser.php';
  *
  *   require_once 'Genealogy/Gedcom.php';
  *   $ged =& new Genealogy_Gedcom('test.ged');
- *   
+ *
  *   echo 'Number of individuals : '.  $ged->getNumberOfIndividuals().'<br>';
  *   echo 'Number of families : '.     $ged->getNumberOfFamilies().   '<br>';
  *   echo 'Number of objects :' .      $ged->getNumberOfObjects().    '<br>';
@@ -53,23 +66,29 @@ require_once 'Gedcom/Parser.php';
  *
  * Contributors:
  *
- * @author   Olivier Vanhoucke <olivier@php.net>
- * @version  $Revision$
+ * @category Genealogy
  * @package  Genealogy_Gedcom
+ * @author   Olivier Vanhoucke <olivier@php.net>
+ * @license  http://www.php.net/license/3_01.txt PHP License 3.0.1
+ * @version  Release: @PACKAGE_VERSION@
  * @access   public
+ * @link     http://pear.php.net/package/Genealogy_Gedcom
  */
-class Genealogy_Gedcom extends Genealogy_Parser {
+class Genealogy_Gedcom extends Genealogy_Parser
+{
 
     /**
      * Constructor
      *
      * Creates a new Genealogy_Gedcom Object
      *
+     * @param string $filename Gedcom filename
+     *
      * @access public
-     * @param string Gedcom filename
      * @return object Genealogy_Gedcom the new Genealogy_Gedcom object
      */
-    function Genealogy_Gedcom($filename) {
+    function Genealogy_Gedcom($filename)
+    {
         $this->_GedcomFile = $filename;
         parent::parse();
     }
@@ -80,7 +99,8 @@ class Genealogy_Gedcom extends Genealogy_Parser {
      * @access public
      * @return integer
      */
-    function getNumberOfIndividuals() {
+    function getNumberOfIndividuals()
+    {
         return count($this->_GedcomIndividualsTree);
     }
 
@@ -90,7 +110,8 @@ class Genealogy_Gedcom extends Genealogy_Parser {
      * @access public
      * @return integer
      */
-    function getNumberOfFamilies() {
+    function getNumberOfFamilies()
+    {
         return count($this->_GedcomFamiliesTree);
     }
 
@@ -100,7 +121,8 @@ class Genealogy_Gedcom extends Genealogy_Parser {
      * @access public
      * @return integer
      */
-    function getNumberOfObjects() {
+    function getNumberOfObjects()
+    {
         return count($this->_GedcomObjectsTree);
     }
 
@@ -110,22 +132,25 @@ class Genealogy_Gedcom extends Genealogy_Parser {
      * @access public
      * @return string
      */
-    function getLastUpdate() {
+    function getLastUpdate()
+    {
         return $this->GedcomHeaderTreeObject->Date;
     }
 
     /**
      * Get an Individual (object) from an identifier
      *
-     * @param  string Indentifier
+     * @param string $identifier Identifier
+     *
      * @access public
      * @return mixed object or boolean (error)
      */
-    function getIndividual($identifier) {
+    function getIndividual($identifier)
+    {
         foreach ($this->GedcomIndividualsTreeObjects as $obj) {
-                if ($obj->Identifier == $identifier) {
-                   return $obj;
-                }
+            if ($obj->Identifier == $identifier) {
+                return $obj;
+            }
         }
         return false;
     }
@@ -133,15 +158,17 @@ class Genealogy_Gedcom extends Genealogy_Parser {
     /**
      * Get a family (object) from an identifier
      *
-     * @param  string Indentifier
+     * @param string $identifier Identifier
+     *
      * @access public
-     * @return mixed object or boolean (error)
+     * @return mixed object or false on error.
      */
-    function getFamily($identifier) {
+    function getFamily($identifier)
+    {
         foreach ($this->GedcomFamiliesTreeObjects as $obj) {
-                if ($obj->Identifier == $identifier) {
-                   return $obj;
-                }
+            if ($obj->Identifier == $identifier) {
+                return $obj;
+            }
         }
         return false;
     }
@@ -149,15 +176,17 @@ class Genealogy_Gedcom extends Genealogy_Parser {
     /**
      * Get an object (object) from an identifier
      *
-     * @param  string Indentifier
+     * @param string $identifier Identifier
+     *
      * @access public
-     * @return mixed object or boolean (error)
+     * @return mixed object or false on error.
      */
-    function getObject($identifier) {
+    function getObject($identifier)
+    {
         foreach ($this->GedcomObjectsTreeObjects as $obj) {
-                if ($obj->Identifier == $identifier) {
-                   return $obj;
-                }
+            if ($obj->Identifier == $identifier) {
+                return $obj;
+            }
         }
         return false;
     }
@@ -165,15 +194,17 @@ class Genealogy_Gedcom extends Genealogy_Parser {
     /**
      * test if an individual exists
      *
-     * @param  string Indentifier
+     * @param string $identifier Identifier
+     *
      * @access public
      * @return boolean
      */
-    function isIndividual($identifier) {
+    function isIndividual($identifier)
+    {
         foreach ($this->GedcomIndividualsTreeObjects as $obj) {
-                if ($obj->Identifier == $identifier) {
-                   return true;
-                }
+            if ($obj->Identifier == $identifier) {
+                return true;
+            }
         }
         return false;
     }
@@ -181,15 +212,17 @@ class Genealogy_Gedcom extends Genealogy_Parser {
     /**
      * test if a family exists
      *
-     * @param  string Indentifier
+     * @param string $identifier Identifier
+     *
      * @access public
      * @return boolean
      */
-    function isFamily($identifier) {
+    function isFamily($identifier)
+    {
         foreach ($this->GedcomFamiliesTreeObjects as $obj) {
-                if ($obj->Identifier == $identifier) {
-                   return true;
-                }
+            if ($obj->Identifier == $identifier) {
+                return true;
+            }
         }
         return false;
     }
@@ -197,15 +230,17 @@ class Genealogy_Gedcom extends Genealogy_Parser {
     /**
      * test if an object exists
      *
-     * @param  string Indentifier
+     * @param string $identifier Identifier
+     *
      * @access public
      * @return boolean
      */
-    function isObject($identifier) {
+    function isObject($identifier)
+    {
         foreach ($this->GedcomObjectsTreeObjects as $obj) {
-                if ($obj->Identifier == $identifier) {
-                   return true;
-                }
+            if ($obj->Identifier == $identifier) {
+                return true;
+            }
         }
         return false;
     }
