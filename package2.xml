@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+http://pear.php.net/dtd/tasks-1.0.xsd
+http://pear.php.net/dtd/package-2.0
+http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Genealogy_Gedcom</name>
+ <channel>pear.php.net</channel>
+ <summary>Gedcom parser</summary>
+ <description>This package was written to parse .ged (gedcom) file.
+ </description>
+ <lead>
+  <name>Olivier Vanhoucke</name>
+  <user>olivier</user>
+  <email>olivier@php.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-09-03</date>
+ <time>23:18:26</time>
+ <version>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>alpha</release>
+  <api>alpha</api>
+ </stability>
+ <license uri="http://www.php.net/license">PHP License</license>
+ <notes>
+ Initial release
+ </notes>
+ <contents>
+  <dir name="/">
+   <dir name="examples">
+    <file baseinstalldir="Genealogy/Gedcom" name="example1.php" role="doc" />
+   </dir> <!-- //examples -->
+   <file baseinstalldir="Genealogy/Gedcom" name="Genealogy_Family.php" role="php" />
+   <file baseinstalldir="Genealogy" name="Genealogy_Gedcom.php" role="php" />
+   <file baseinstalldir="Genealogy/Gedcom" name="Genealogy_Header.php" role="php" />
+   <file baseinstalldir="Genealogy/Gedcom" name="Genealogy_Individual.php" role="php" />
+   <file baseinstalldir="Genealogy/Gedcom" name="Genealogy_Object.php" role="php" />
+   <file baseinstalldir="Genealogy/Gedcom" name="Genealogy_Parser.php" role="php" />
+  </dir> <!-- / -->
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+  </required>
+ </dependencies>
+ <phprelease>
+  <filelist>
+   <install as="Gedcom.php" name="Genealogy_Gedcom.php" />
+   <install as="Parser.php" name="Genealogy_Parser.php" />
+   <install as="Individual.php" name="Genealogy_Individual.php" />
+   <install as="Family.php" name="Genealogy_Family.php" />
+   <install as="Object.php" name="Genealogy_Object.php" />
+   <install as="Header.php" name="Genealogy_Header.php" />
+  </filelist>
+ </phprelease>
+</package>
