@@ -416,9 +416,11 @@ class Genealogy_Parser
                     @preg_replace('/\d SEX (\w)/US', '$1',
                         $this->_GedcomIndividualsTree[$i][$this->_tag(
                             $this->_GedcomIndividualsTree[$i], 'SEX')]),
-                    @preg_replace('/\d OCCU (.*)/US',
-                        '$1', $this->_GedcomIndividualsTree[$i][$this->_tag(
-                            $this->_GedcomIndividualsTree[$i], 'OCCU')]),
+                    $this->_arrayTag($this->_GedcomIndividualsTree[$i], 'OCCU'),
+
+              //      @preg_replace('/\d OCCU (.*)/US',
+              //          '$1', $this->_GedcomIndividualsTree[$i][$this->_tag(
+              //              $this->_GedcomIndividualsTree[$i], 'OCCU')]),
                     @preg_replace('/\d SOUR (.*)/US',
                         '$1', $this->_GedcomIndividualsTree[$i][$this->_tag(
                             $this->_GedcomIndividualsTree[$i], 'SOUR')]),

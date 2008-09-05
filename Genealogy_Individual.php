@@ -135,7 +135,7 @@ class Genealogy_Individual
      * @var    string
      * @access public
      */
-    var $Occupation = '';
+    var $Occupation = array();
 
     /**
      * Source
