@@ -592,7 +592,7 @@ class Genealogy_Parser
      * @param array  $tab tree part
      * @param string $tag tag
      *
-     * @return integer tag id or 20 (force error)
+     * @return integer tag id or -1 (force error)
      * @access private
      */
     function _tag($tab, $tag)
@@ -602,7 +602,7 @@ class Genealogy_Parser
                 return $i;
             }
         }
-        return 20;
+        return -1;
     }
 
     /**
@@ -618,7 +618,7 @@ class Genealogy_Parser
     {
         $str = '';
         $i   = $this->_tag($tab, $mainTag);
-        if ($i === 20) {
+        if ($i === -1) {
             return '';
         }
         $level = (integer) $tab[$i]{0};
