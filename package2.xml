@@ -14,19 +14,25 @@ http://pear.php.net/dtd/package-2.0.xsd">
   <email>olivier@php.net</email>
   <active>yes</active>
  </lead>
- <date>2008-09-03</date>
- <time>23:18:26</time>
+ <lead>
+  <name>Ken Guest</name>
+  <user>kguest</user>
+  <email>ken@linux.ie</email>
+  <active>yes</active>
+ </lead>
+ <date>2008-09-21</date>
+ <time>19:45:26</time>
  <version>
-  <release>1.0.0</release>
-  <api>1.0.0</api>
+  <release>1.0.1</release>
+  <api>1.0.1</api>
  </version>
  <stability>
-  <release>alpha</release>
-  <api>alpha</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license uri="http://www.php.net/license">PHP License</license>
  <notes>
- Initial release
+ Maintenance release
  </notes>
  <contents>
   <dir name="/">
