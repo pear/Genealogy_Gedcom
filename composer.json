@@ -1,0 +1,25 @@
+{
+    "authors": [
+        {
+            "email": "olivier@php.net",
+            "name": "Olivier Vanhoucke",
+            "role": "Lead"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "./"
+        ]
+    },
+    "description": "More info available on: http://pear.php.net/package/Genealogy_Gedcom",
+    "license": "PHP License",
+    "name": "pear/genealogy_gedcom",
+    "support": {
+        "issues": "http:///bugs/search.php?cmd=display&package_name[]=Genealogy_Gedcom",
+        "source": "https://github.com/pear/Genealogy_Gedcom"
+    },
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}
